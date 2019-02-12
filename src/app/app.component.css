@@ -1,0 +1,8 @@
+header, section {
+  padding: 15px;
+  background-color: #32435b;
+  color: white;
+}
+.description {
+  font-style: italic;
+}
