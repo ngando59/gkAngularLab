@@ -1,0 +1,82 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 form-block">
+    <h2 class="text-center">Ajouter une formation</h2>
+    <form class="form-horizontal" #sessionItemForm="ngForm" (ngSubmit)="addSession(sessionItemForm.value)">
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="name">
+          Name
+        </label>
+        <div class="col-sm-10">
+          <select name="name" id="name" [(ngModel)]="session.name" required>
+            <option value="Web">Web</option>
+            <option value="Mobile">Mobile</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="track">
+          Track
+        </label>
+        <div class="col-sm-10">
+          <select name="track" id="track" required [(ngModel)]="session.track">
+            <option *ngFor="let track of tracks" [value]="track">{{track}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="date">
+          Date
+        </label>
+        <div class="col-sm-10">
+          <input type="date" name="date" id="date" [(ngModel)]="session.date"  required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="duree">
+          Days
+        </label>
+        <div class="col-sm-10">
+          <input type="number" name="duree" id="duree" [(ngModel)]="session.duree"  required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="local">
+          Location
+        </label>
+        <div class="col-sm-10">
+          <input type="text" name="local" id="local" [(ngModel)]="session.local" #local="ngModel" minlength="4"  required>
+          <div *ngIf="local.invalid && (local.dirty || local.touched)">
+            <div *ngIf="local.errors.minlength">
+              Minimum 4 caractères !
+            </div>
+            <div *ngIf="local.errors.required">
+              Champ local obligatoire !
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="participants">
+          Participants
+        </label>
+        <div class="col-sm-10">
+          <input type="number" name="participants" id="participants" [(ngModel)]="session.participants"  required>
+        </div>
+      </div>
+
+      <div class="text-right">
+        <button class="btn btn-default" type="submit" [disabled]="!sessionItemForm.form.valid">Enregistrer</button>
+      </div>
+
+
+    </form>
+  </div>
+</div>
+
+

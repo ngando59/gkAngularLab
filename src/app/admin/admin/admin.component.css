@@ -1,0 +1,8 @@
+header h1 {
+  color: white;
+}
+header, section {
+  padding: 15px;
+  background-color: #32435b;
+  color: white;
+}

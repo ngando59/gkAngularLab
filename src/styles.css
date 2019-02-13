@@ -5,6 +5,9 @@ body, html {
   background-color: #32435b;
   color: white;
 }
+header {
+  background-color: #32435b;
+}
 section {
   padding: 15px;
 }
