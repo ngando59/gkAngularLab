@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-session-item',
@@ -16,10 +16,10 @@ export class SessionItemComponent implements OnInit {
   }
 
   inscrire() {
-  this.session.name = 'Formation Web avançé';
-  this.session.participants++;
-  this.participantsChange.exit({
-    value: this.session.participants
-  });
+    this.session.name = 'Formation Web avançé';
+    this.session.participants++;
+    this.participantsChange.emit({
+      value: this.session.participants
+    });
   }
 }

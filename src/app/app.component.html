@@ -9,7 +9,8 @@
   <p class="description">suivre les sessions</p>
   <div class="row">
     <div class="col-md-3">
-      <app-session-item [session]="firstSession" (participantsChange)="nbParticipantsChange($event)" ></app-session-item>Nombre de participants : {{nbPart}}</p>
+      <app-session-item [session]="firstSession" (participantsChange)="nbParticipantsChange($event)" ></app-session-item>
+      <p class="description">Nombre total de participants : {{nbPart}}</p>
     </div>
   </div>
 </section>
