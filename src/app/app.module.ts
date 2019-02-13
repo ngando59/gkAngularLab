@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SessionItemComponent } from './session-item/session-item.component';
+import { InscriptionDisabledDirective } from './inscription-disabled.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SessionItemComponent
+    SessionItemComponent,
+    InscriptionDisabledDirective
   ],
   imports: [
     BrowserModule,
