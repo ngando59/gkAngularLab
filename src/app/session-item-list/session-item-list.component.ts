@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FakeSessionItemService} from '../../fake-session-item.service';
+import {FakeSessionItemService} from '../fake-session-item.service';
 
 @Component({
   selector: 'app-session-item-list',

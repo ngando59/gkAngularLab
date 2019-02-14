@@ -1,8 +1,14 @@
-<header>
-  <h1 class="text-center">Admin Module</h1>
-</header>
+<nav>
+  <a routerLink="./list" routerLinkActive="active">
+    <i class="fa fa-list"></i>
+  </a>
+  <a routerLink="./add" routerLinkActive="active">
+    <i class="fa fa-calendar-plus"></i>
+  </a>
+  <a [routerLink]="['./edit', 1]" routerLinkActive="active">
+    <i class="fa fa-edit"></i>
+  </a>
+</nav>
 <section>
-  <app-session-add-form></app-session-add-form>
-  <app-session-item-list></app-session-item-list>
-  <app-session-edit-form></app-session-edit-form>
+  <router-outlet></router-outlet>
 </section>

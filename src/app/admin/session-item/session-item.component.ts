@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Directive, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {FakeSessionItemService} from '../../fake-session-item.service';
 
 @Component({
   selector: 'app-session-item',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SessionItemComponent implements OnInit {
 
-  constructor() { }
+  @Input() session;
+  @Output() participantsChange = new EventEmitter<any>();
+  isCompleted = false;
+  constructor(private sessionItemService: FakeSessionItemService) { }
 
   ngOnInit() {
   }
 
+  inscrire() {
+    this.session.participants++;
+    this.participantsChange.emit({
+      value: this.session.participants
+    });
+    if (this.session.participants >= 20) {
+      this.session.isCompleted = true;
+    }
+  }
+  onDelete() {
+    console.log(this.session);
+    this.sessionItemService.delete(this.session);
+  }
 }

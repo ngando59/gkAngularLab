@@ -1,3 +1,15 @@
-<p>
-  session-item works!
-</p>
+<h2>{{session.name}}</h2>
+<div>{{session.track}}</div>
+<div><b>Date :</b> {{session.date | date:'dd-MM-yyyy'}}</div>
+<div><b>Duree :</b> {{session.duree}} jours</div>
+<div><b>Lieu :</b> {{session.local}}</div>
+<div>{{session.participants}} Participants</div>
+<div *ngIf="session.participants < 20; then ok else ko"></div>
+<ng-template #ok>{{20 - session.participants}} places disponibles !</ng-template>
+<ng-template #ko>session complète !</ng-template>
+<div class="tools">
+  <button  type="button" class="btn btn-danger delete" (click)="onDelete()"><i class="fa fa-trash"></i>Supprimer</button>
+  <button [appInscriptionDisabled]="session.isCompleted" type="button" class="btn btn-success inscrire" (click)="inscrire()"><i class="fa fa-plus"></i>Inscription</button>
+  <button type="button" class="btn btn-primary"><i class="fa fa-share-alt"></i>Partager</button>
+</div>
+

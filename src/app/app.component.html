@@ -1,19 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<header>
-  <h1 class="text-center">
-    Bienvenue sur {{ title }}!
-  </h1>
-  <h1>Liste des sessions de formation</h1>
-  <p class="description">suivre les sessions</p>
-</header>
-
 <section>
-  <app-session-item *ngFor="let sessionItem of sessionItems" [session]="sessionItem"
-                    [ngClass]="{'session-web': sessionItem.name === 'Web',
-                               'session-mobile': sessionItem.name === 'Mobile'}">
-
-  </app-session-item>
+  <router-outlet></router-outlet>
 </section>
-
-
 

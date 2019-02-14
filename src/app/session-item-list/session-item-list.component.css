@@ -1,3 +1,6 @@
 .items {
  display: inline-flex;
 }
+i.adminLink{
+  font-size: 90px;
+}

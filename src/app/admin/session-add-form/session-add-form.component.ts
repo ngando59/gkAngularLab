@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FakeSessionItemService} from '../../fake-session-item.service';
 
 @Component({
   selector: 'app-session-add-form',
@@ -7,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SessionAddFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sessionItemService: FakeSessionItemService) { }
 
   ngOnInit() {
   }
 
   addSession(sessionItem) {
+    this.sessionItemService.add(sessionItem);
     console.log(sessionItem);
   }
 
